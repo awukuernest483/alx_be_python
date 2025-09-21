@@ -1,16 +1,13 @@
 # weather_conditions=["sunny","rainy","cold"]
 # recommendations=["Wear a t-shirt and sunglasses","Don't forget your umbrella and a raincoat.","Make sure to wear a warm coat and a scarf","Sorry, I don't have recommendations for this weather."]
 weather = input("What's the weather like today? (sunny/rainy/cold): ")
-if (weather == "sunny") : {
-    print ("Wear a t-shirt and sunglasses")
-}
-elif weather == "rainy": {
+if weather == "sunny":
+    print("Wear a t-shirt and sunglasses.")
+elif weather == "rainy": 
     print ("Don't forget your umbrella and a raincoat.")
-} 
-elif weather == "cold" : {
+elif weather == "cold" : 
     print ("Make sure to wear a warm coat and a scarf")
-} 
-else : {
+else : 
     print ("Sorry, I don't have recommendations for this weather.")
-}
+
 
