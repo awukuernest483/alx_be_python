@@ -16,7 +16,7 @@ try:
 except ValueError:
     print("Invalid temperature. Please enter a numeric value.")
     exit(1)
-conversion_type = input("Is this temperature in Celsius or Fahrenheit? (C/F)")
+conversion_type = input("Is this temperature in Celsius or Fahrenheit? (C/F):")
 
 if conversion_type.upper() == "C":
     converted_temp = convert_to_fahrenheit(temperature)
