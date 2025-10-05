@@ -10,8 +10,8 @@ class TestSimpleCalculator(unittest.TestCase):
         """Test the addition method."""
         self.assertEqual(self.calc.add(2, 3), 5)
         self.assertEqual(self.calc.add(-1, 1), 0)
-        self.assertEqual(self.calc.subtract(2,3), -1)
-        self.assertEqual(self.calc.subtract(20,3), 17)
+        self.assertEqual(self.calc.subtraction(2,3), -1)
+        self.assertEqual(self.calc.subtraction(20,3), 17)
         self.assertEqual(self.calc.multiply(2,3), 6)
         self.assertEqual(self.calc.multiply(2,-3), -6)
         self.assertEqual(self.calc.multiply(-2,-3), 6)
