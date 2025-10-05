@@ -5,7 +5,9 @@ def safe_divide(numerator, denominator):
     except:
         if denominator == 0:
             return print ("Error: Cannot divide by zero.")
-        else:
-            return print("sklss")
+        if ValueError(numerator):
+            return print ("Error: Please enter numeric values only.")
+        if ValueError(denominator):
+            return print ("Error: Please enter numeric values only.")
    
     
