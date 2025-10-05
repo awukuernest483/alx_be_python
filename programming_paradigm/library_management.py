@@ -10,16 +10,16 @@ class Library:
         self.books = []
         
         def add_book():
-            print ("")
+            add_book(self)
         
         
         def check_out_book(title):
-            print (f"{title}")
+            check_out_book(self)
             
         def return_book(title):
-            print ("")
+            return_book(self)
             
         def list_available_books():
-            print ("")
+            list_available_books(self)
             
         
