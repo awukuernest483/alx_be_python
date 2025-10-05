@@ -4,13 +4,20 @@ class Book:
         self.author = author
         self._is_checked_out = _is_checked_out
 
+    def check_out(self):
+        self._is_checked_out = True
+
+    def return_book(self):
+        self._is_checked_out = False
+
     def __repr__(self):
-        return f"<Book: {self.title} by {self.author}>"
+        status = "Checked out" if self._is_checked_out else "Available"
+        return f"<Book: {self.title} by {self.author} - {status}>"
+
 
 class Library:
     def __init__(self):
         self.books = []
-        self.checked_out_books = []
 
     def add_book(self, book):
         self.books.append(book)
@@ -18,25 +25,23 @@ class Library:
 
     def check_out_book(self, title):
         for book in self.books:
-            if book.title == title:
-                self.books.remove(book)
-                self.checked_out_books.append(book)
+            if book.title == title and not book._is_checked_out:
+                book.check_out()
                 print(f"Checked out: {book.title}")
                 return True
-        print(f"Book titled '{title}' not found.")
+        print(f"Book titled '{title}' not found or already checked out.")
         return False
 
-    # 👇🏾 This is the return_book method your main.py is expecting
     def return_book(self, title):
-        for book in self.checked_out_books:
-            if book.title == title:
-                self.checked_out_books.remove(book)
-                self.books.append(book)
+        for book in self.books:
+            if book.title == title and book._is_checked_out:
+                book.return_book()
                 print(f"Returned: {book.title}")
                 return True
-        print(f"Book titled '{title}' not found in checked-out books.")
+        print(f"Book titled '{title}' not found or not checked out.")
         return False
 
     def list_available_books(self):
+        available = [book for book in self.books if not book._is_checked_out]
         print("Available books:")
-        print(self.books)
+        print(available)
