@@ -6,6 +6,20 @@ class Book:
 
 
 class Library:
-    def __init__(self, name, age):
-      self.name = name
-      self.age = age
+    def __init__(self):
+        self.books = []
+        
+        def add_book():
+            print ("")
+        
+        
+        def check_out_book(title):
+            print (f"{title}")
+            
+        def return_book(title):
+            print ("")
+            
+        def list_available_books():
+            print ("")
+            
+        
