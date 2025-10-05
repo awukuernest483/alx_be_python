@@ -4,3 +4,8 @@ class Book:
       self.author = author
       self._is_checked_out = _is_checked_out
 
+
+class Library:
+    def __init__(self, name, age):
+      self.name = name
+      self.age = age
