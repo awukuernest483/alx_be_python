@@ -12,9 +12,8 @@ class Library:
         def add_book():
             print ("")
         
-        
         def check_out_book(title):
-            print (f"{title}")
+            return_book(self)
             
         def return_book(title):
             print ("")
