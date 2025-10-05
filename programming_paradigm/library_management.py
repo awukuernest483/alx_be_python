@@ -17,14 +17,15 @@ class Book:
 
 class Library:
     def __init__(self):
-        self.books = []
+        # ✅ Use _books (private attribute) as required
+        self._books = []
 
     def add_book(self, book):
-        self.books.append(book)
+        self._books.append(book)
         print(f"Added: {book}")
 
     def check_out_book(self, title):
-        for book in self.books:
+        for book in self._books:
             if book.title == title and not book._is_checked_out:
                 book.check_out()
                 print(f"Checked out: {book.title}")
@@ -33,7 +34,7 @@ class Library:
         return False
 
     def return_book(self, title):
-        for book in self.books:
+        for book in self._books:
             if book.title == title and book._is_checked_out:
                 book.return_book()
                 print(f"Returned: {book.title}")
@@ -42,6 +43,6 @@ class Library:
         return False
 
     def list_available_books(self):
-        available = [book for book in self.books if not book._is_checked_out]
+        available = [book for book in self._books if not book._is_checked_out]
         print("Available books:")
         print(available)
